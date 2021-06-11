@@ -1,4 +1,4 @@
-package com.demo.auth.spring;
+package com.demo.auth.keycloak;
 
 
 import com.nimbusds.jose.jwk.JWKSet;
@@ -22,10 +22,10 @@ import java.security.interfaces.RSAPublicKey;
 import java.util.UUID;
 
 @SpringBootApplication
-public class SpringAuthServerApplication {
+public class KeycloakAuthServerApplication {
 
     public static void main(String[] args) {
-        new SpringApplication(SpringAuthServerApplication.class).run(args);
+        new SpringApplication(KeycloakAuthServerApplication.class).run(args);
     }
 
     @Bean
@@ -33,21 +33,6 @@ public class SpringAuthServerApplication {
         RSAKey rsaKey = generateRsa();
         JWKSet jwkSet = new JWKSet(rsaKey);
         return (jwkSelector, securityContext) -> jwkSelector.select(jwkSet);
-    }
-
-    @Bean
-    public ProviderSettings providerSettings() {
-        return new ProviderSettings().issuer("http://127.0.0.1:4444");
-    }
-
-    @Bean
-    public UserDetailsService users() {
-        UserDetails user = User.withDefaultPasswordEncoder()
-                .username("admin")
-                .password("admin")
-                .roles("")
-                .build();
-        return new InMemoryUserDetailsManager(user);
     }
 
     private static RSAKey generateRsa() throws NoSuchAlgorithmException {
@@ -64,6 +49,21 @@ public class SpringAuthServerApplication {
         KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
         keyPairGenerator.initialize(2048);
         return keyPairGenerator.generateKeyPair();
+    }
+
+    @Bean
+    public ProviderSettings providerSettings() {
+        return new ProviderSettings().issuer("http://localhost:4444");
+    }
+
+    @Bean
+    public UserDetailsService users() {
+        UserDetails user = User.withDefaultPasswordEncoder()
+                .username("admin")
+                .password("admin")
+                .roles("Admin")
+                .build();
+        return new InMemoryUserDetailsManager(user);
     }
 
 

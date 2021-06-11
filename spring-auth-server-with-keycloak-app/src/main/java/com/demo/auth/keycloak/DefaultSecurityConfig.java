@@ -1,4 +1,4 @@
-package com.demo.auth.spring;
+package com.demo.auth.keycloak;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -13,7 +13,6 @@ public class DefaultSecurityConfig {
         http.authorizeRequests(authorizeRequests ->
                 authorizeRequests.anyRequest().authenticated()
         ).oauth2Login();
-//                .formLogin(withDefaults());
         return http.build();
     }
 

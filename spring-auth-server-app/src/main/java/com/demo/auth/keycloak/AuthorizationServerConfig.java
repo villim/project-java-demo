@@ -1,4 +1,4 @@
-package com.demo.auth.spring;
+package com.demo.auth.keycloak;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

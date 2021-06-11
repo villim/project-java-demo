@@ -1,6 +1,6 @@
-com/demo/auth/spring/AuthorizationServerConfig.java
- com.demo.auth.spring.AuthorizationServerConfig
-com/demo/auth/spring/DefaultSecurityConfig.java
- com.demo.auth.spring.DefaultSecurityConfig
-com/demo/auth/spring/SpringAuthServerApplication.java
- com.demo.auth.spring.SpringAuthServerApplication
+com/demo/auth/keycloak/DefaultSecurityConfig.java
+ com.demo.auth.keycloak.DefaultSecurityConfig
+com/demo/auth/keycloak/SpringAuthServerApplication.java
+ com.demo.auth.keycloak.SpringAuthServerApplication
+com/demo/auth/keycloak/AuthorizationServerConfig.java
+ com.demo.auth.keycloak.AuthorizationServerConfig

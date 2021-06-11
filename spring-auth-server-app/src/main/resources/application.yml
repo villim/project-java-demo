@@ -5,4 +5,4 @@ logging:
   level:
     root: INFO
     org.springframework: INFO
-    com.demo.auth.spring: DEBUG
+    com.demo.auth.keycloak: DEBUG

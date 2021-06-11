@@ -1,1 +1,1 @@
-com.demo.auth.DemoAuthServerApplication
+com.demo.auth.keycloak.SpringAuthServerApplication
