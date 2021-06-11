@@ -1,0 +1,26 @@
+server:
+  port: 4444
+
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id:  sso-client
+            client-secret: fe092be0-dce6-4551-ae65-7eb8d2b57e15
+            authorization-grant-type: authorization_code
+            redirectUri: "http://127.0.0.1:4444/login/oauth2/code/keycloak"
+            scope:
+#             - openid
+              - profile
+
+        provider:
+          keycloak:
+            authorization-uri: http://localhost:8080/auth/realms/demo/protocol/openid-connect/auth
+            token-uri: http://localhost:8080/auth/realms/demo/protocol/openid-connect/token
+            user-info-uri: http://localhost:8080/auth/realms/demo/protocol/openid-connect/userinfo
+            jwk-set-uri: http://localhost:8080/auth/realms/demo/protocol/openid-connect/certs
+            issuer-uri: http://localhost:8080/auth/realms/demo
+            user-name-attribute: preferred_username

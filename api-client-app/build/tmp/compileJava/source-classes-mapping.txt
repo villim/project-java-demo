@@ -1,0 +1,6 @@
+com.demo.client/ArticlesController.java
+ com.demo.client.ArticlesController
+com.demo.client/ApiClientApplication.java
+ com.demo.client.ApiClientApplication
+com.demo.client/DefaultSecurityConfig.java
+ com.demo.client.DefaultSecurityConfig

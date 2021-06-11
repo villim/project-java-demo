@@ -1,0 +1,6 @@
+com/demo/resource/ArticlesController.java
+ com.demo.resource.ArticlesController
+com/demo/resource/ResourceApplication.java
+ com.demo.resource.ResourceApplication
+com/demo/resource/ResourceServerConfig.java
+ com.demo.resource.ResourceServerConfig

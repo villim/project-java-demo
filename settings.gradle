@@ -1,0 +1,5 @@
+rootProject.name = 'project-java-demo'
+include 'api-client-app'
+include 'resource-server-app'
+include 'spring-auth-server-app'
+include 'spring-auth-server-with-keycloak-app'
